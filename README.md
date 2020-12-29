@@ -31,3 +31,9 @@ For VRChat, you can use the [UIExpansionKit](https://github.com/knah/VRCMods) Mo
 - The Long Dark
 - Job Simlulator & Vacation Simulator
 - SCP Unity
+
+### Unknown / Not Tested
+- Phasmophobia
+- Blade & Sorcery
+- The Forest
+- Eden Rising
