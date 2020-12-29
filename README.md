@@ -26,3 +26,8 @@ For VRChat, you can use the [UIExpansionKit](https://github.com/knah/VRCMods) Mo
 - SynthRiders
 - Audica
 - Beat Saber _(Yes, with ML on top of IPA)_
+- H3VR
+- Pistol Whip
+- The Long Dark
+- Job Simlulator & Vacation Simulator
+- SCP Unity
