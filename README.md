@@ -25,7 +25,7 @@ For VRChat, you can use the [UIExpansionKit](https://github.com/knah/VRCMods) Mo
 - Totally Accurate Battle Simulator
 - SynthRiders
 - Audica
-- Beat Saber _(Yes, with ML on top of IPA)_
+- Beat Saber | >= 1.13.0 _(Yes, with ML on top of IPA)_
 - H3VR
 - Pistol Whip
 - The Long Dark
