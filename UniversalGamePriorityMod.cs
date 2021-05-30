@@ -8,10 +8,10 @@ namespace GamePriority
         public static class BuildInfo
         {
             public const string Name = "GamePriority";
-            public const string Author = "KortyBoi";
+            public const string Author = "Lily";
             public const string Company = null;
             public const string Version = "1.1.1";
-            public const string DownloadLink = "https://github.com/KortyBoi/GamePriority/";
+            public const string DownloadLink = "https://github.com/MintLily/GamePriority/";
         }
 
         private const string ModCategory = "GamePriority";
