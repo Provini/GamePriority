@@ -10,40 +10,41 @@ namespace GamePriority
             public const string Name = "GamePriority";
             public const string Author = "Lily";
             public const string Company = null;
-            public const string Version = "1.1.1";
+            public const string Version = "1.1.2";
             public const string DownloadLink = "https://github.com/MintLily/GamePriority/";
         }
 
-        private const string ModCategory = "GamePriority";
-        private const string setGamePriority = "SetGamePriorityToHigh";
+        public static GamePriorityChanger Instance { get; private set; }
 
+        public static MelonPreferences_Category category;
+        public static MelonPreferences_Entry<bool> setGamePriority;
         public override void OnApplicationStart()
         {
-            MelonPrefs.RegisterCategory(ModCategory, "Game Priority");
-            MelonPrefs.RegisterBool(ModCategory, setGamePriority, false, "Set game priority to High");
+            category = MelonPreferences.CreateCategory("GamePriority", "Game Priority");
+            setGamePriority = category.CreateEntry("SetGamePriorityToHigh", false, "Set game priority to High");
 
             ApplyChanges();
         }
 
-        public override void OnModSettingsApplied()
+        public override void OnPreferencesSaved()
         {
             ApplyChanges();
         }
 
         private static void ApplyChanges()
         {
-            bool highPriority = MelonPrefs.GetBool(ModCategory, setGamePriority);
+            bool highPriority = setGamePriority.Value;
             if (!highPriority)
             {
                 using (Process p = Process.GetCurrentProcess())
                     p.PriorityClass = ProcessPriorityClass.Normal;
-                MelonLogger.Log($"Set game's process priority to: Normal");
+                Instance.LoggerInstance.Msg($"Set game's process priority to: Normal");
             }
             else if (highPriority)
             {
                 using (Process p = Process.GetCurrentProcess())
                     p.PriorityClass = ProcessPriorityClass.High;
-                MelonLogger.Log($"Set game's process priority to: High");
+                Instance.LoggerInstance.Msg($"Set game's process priority to: High");
             }
         }
     }
