@@ -14,12 +14,14 @@ namespace GamePriority
             public const string DownloadLink = "https://github.com/MintLily/GamePriority/";
         }
 
-        public static GamePriorityChanger Instance { get; private set; }
-
+        public static MelonMod Instance;
         public static MelonPreferences_Category category;
         public static MelonPreferences_Entry<bool> setGamePriority;
+        
         public override void OnApplicationStart()
         {
+            Instance = this;
+            
             category = MelonPreferences.CreateCategory("GamePriority", "Game Priority");
             setGamePriority = category.CreateEntry("SetGamePriorityToHigh", false, "Set game priority to High");
 
